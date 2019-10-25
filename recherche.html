@@ -11,7 +11,7 @@ function recherche(){
 	type : 'GET',
 	dataType : 'json',
 	success : function(resultat){
-		console.log(resultat);
+		$("#res").html(resultat.main.temp);
 		console.log(resultat.main.temp);
 	 },
 	 error : function(resultat){
@@ -23,5 +23,6 @@ function recherche(){
 </script>
 Ville : <input type="text" id="val"/></br>
 <input type="submit" value="Rechercher" id="R" onclick = 'recherche()'/>
+<p id="res"> </p>
 </body>
 </html>
