@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<title>Recherche</title></head>
+<body>
+<script>
+function recherche(){
+	console.log("test");
+	$.ajax({url : 'https://api.openweathermap.org/data/2.5/weather?q='+$('#val').val()+'&uk&appid=ce14f59ef22256ce94a446654259b29a',
+	type : 'GET',
+	dataType : 'json',
+	success : function(resultat){
+		console.log(resultat);
+		console.log(resultat.main.temp);
+	 },
+	 error : function(resultat){
+		console.log(resultat);
+	 }
+ 
+ });
+};
+</script>
+Ville : <input type="text" id="val"/></br>
+<input type="submit" value="Rechercher" id="R" onclick = 'recherche()'/>
+</body>
+</html>
